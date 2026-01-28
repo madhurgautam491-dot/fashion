@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - Fashion Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CHECKOUT PAGE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .checkout-container {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            background: #ff3366;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+        
+        .product-section {
+            padding: 30px;
+            text-align: center;
+            border-bottom: 2px dashed #eee;
+        }
+        
+        .product-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 3px solid #ff3366;
+        }
+        
+        .product-name {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 36px;
+            color: #ff3366;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .payment-section {
+            padding: 30px;
+        }
+        
+        .section-title {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .upi-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid #ff3366;
+        }
+        
+        .upi-id {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px dashed #ff3366;
+        }
+        
+        .whatsapp-box {
+            background: #25D366;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .step-number {
+            background: #ff3366;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .action-btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+        
+        .home-btn {
+            background: #667eea;
+            color: white;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+            border: 2px dashed #ff3366;
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Complete Your Order</h1>
+            <p>New Page - Checkout</p>
+        </div>
+        
+        <!-- PRODUCT INFO -->
+        <div class="product-section">
+            <h2 class="product-name" id="productName">Product Name</h2>
+            <img id="productImage" class="product-img" src="" alt="Product">
+            <div class="product-price" id="productPrice">₹0</div>
+            <p>Order placed successfully!</p>
+        </div>
+        
+        <!-- PAYMENT SECTION -->
+        <div class="payment-section">
+            <h2 class="section-title">Payment Method</h2>
+            
+            <!-- UPI PAYMENT -->
+            <div class="upi-box">
+                <h3>Pay via UPI</h3>
+                <div class="upi-id">7877373299@fam</div>
+                <p>Scan QR Code or Copy UPI ID</p>
+                
+                <!-- QR CODE -->
+                <div class="qr-code">
+                    <div style="text-align: center;">
+                        <div style="font-size: 60px;">📱</div>
+                        <div>UPI QR Code</div>
+                        <div>7877373299@fam</div>
+                    </div>
+                </div>
+                
+                <button class="action-btn" onclick="copyUPI()">
+                    📋 Copy UPI ID
+                </button>
+            </div>
+            
+            <!-- WHATSAPP ORDER -->
+            <div class="whatsapp-box">
+                <h3>Confirm via WhatsApp</h3>
+                <div class="whatsapp-number">+91 7877373299</div>
+                <p>Send screenshot after payment</p>
+                
+                <button class="action-btn whatsapp-btn" onclick="openWhatsApp()">
+                    💬 Open WhatsApp
+                </button>
+            </div>
+            
+            <!-- STEPS -->
+            <div class="steps">
+                <h3>How to Order:</h3>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>Pay to UPI: 7877373299@fam</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>Take payment screenshot</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>Send screenshot on WhatsApp</div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div>Receive order confirmation</div>
+                </div>
+            </div>
+            
+            <!-- ACTIONS -->
+            <button class="action-btn home-btn" onclick="goBack()">
+                ← Back to Store
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // GET PRODUCT INFO FROM LOCALSTORAGE
+        window.onload = function() {
+            const productName = localStorage.getItem('productName') || 'Product';
+            const productPrice = localStorage.getItem('productPrice') || '0';
+            const productImage = localStorage.getItem('productImage') || '';
+            
+            // DISPLAY PRODUCT INFO
+            document.getElementById('productName').textContent = productName;
+            document.getElementById('productPrice').textContent = '₹' + productPrice;
+            document.getElementById('productImage').src = productImage;
+            
+            // SHOW ORDER CONFIRMATION
+            setTimeout(() => {
+                alert(`✅ Order placed for ${productName}!\n\nAmount: ₹${productPrice}\n\nNow complete payment and send screenshot on WhatsApp.`);
+            }, 500);
+        };
+        
+        // COPY UPI ID
+        function copyUPI() {
+            const upiId = '7877373299@fam';
+            navigator.clipboard.writeText(upiId);
+            alert('✅ UPI ID copied: ' + upiId);
+        }
+        
+        // OPEN WHATSAPP
+        function openWhatsApp() {
+            const productName = localStorage.getItem('productName') || 'Product';
+            const productPrice = localStorage.getItem('productPrice') || '0';
+            
+            const message = `Hello! I want to order:\n\nProduct: ${productName}\nPrice: ₹${productPrice}\n\nI have made payment to UPI: 7877373299@fam\n\nMy details:\nName: \nAddress: \nPhone: `;
+            
+            const whatsappUrl = `https://wa.me/917877373299?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // GO BACK TO STORE
+        function goBack() {
+            window.close(); // Close this tab
+            // Or open home page in new tab
+            // window.open('index.html', '_blank');
+        }
+        
+        // AUTO FOCUS ON PAGE LOAD
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
