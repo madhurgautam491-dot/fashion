@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion Store - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* SIMPLE CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        /* HEADER */
+        .header {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff3366;
+        }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #ff3366, #ff6699);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-price {
+            color: #ff3366;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .buy-btn {
+            width: 100%;
+            padding: 12px;
+            background: #ff3366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">🛍️ FASHION STORE</div>
+        <div style="color: #666;">Home Page</div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1 style="font-size: 48px; margin-bottom: 20px;">Amazing Fashion Collection</h1>
+        <p style="font-size: 20px;">Buy Now - WhatsApp Order & UPI Payment</p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <div class="products">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" alt="T-Shirt" class="product-img">
+            <div class="product-info">
+                <h3>Men's T-Shirt</h3>
+                <p>Premium Cotton</p>
+                <div class="product-price">₹499</div>
+                <button class="buy-btn" onclick="buyProduct('Men T-Shirt', 499, 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b')">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d" alt="Jeans" class="product-img">
+            <div class="product-info">
+                <h3>Jeans</h3>
+                <p>Slim Fit Denim</p>
+                <div class="product-price">₹1299</div>
+                <button class="buy-btn" onclick="buyProduct('Jeans', 1299, 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d')">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea" alt="Shirt" class="product-img">
+            <div class="product-info">
+                <h3>Formal Shirt</h3>
+                <p>Office Wear</p>
+                <div class="product-price">₹799</div>
+                <button class="buy-btn" onclick="buyProduct('Formal Shirt', 799, 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea')">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136" alt="Jacket" class="product-img">
+            <div class="product-info">
+                <h3>Winter Jacket</h3>
+                <p>Warm & Stylish</p>
+                <div class="product-price">₹1999</div>
+                <button class="buy-btn" onclick="buyProduct('Winter Jacket', 1999, 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136')">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product 5 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27" alt="Shoes" class="product-img">
+            <div class="product-info">
+                <h3>Sports Shoes</h3>
+                <p>Running Shoes</p>
+                <div class="product-price">₹1499</div>
+                <button class="buy-btn" onclick="buyProduct('Sports Shoes', 1499, 'https://images.unsplash.com/photo-1576566588028-4147f3842f27')">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Watch" class="product-img">
+            <div class="product-info">
+                <h3>Smart Watch</h3>
+                <p>Fitness Tracker</p>
+                <div class="product-price">₹2999</div>
+                <button class="buy-btn" onclick="buyProduct('Smart Watch', 2999, 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f')">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h3>Fashion Store</h3>
+        <p style="margin: 15px 0;">WhatsApp Orders: 7877373299</p>
+        <p>UPI: 7877373299@fam</p>
+    </footer>
+
+    <script>
+        // BUY PRODUCT FUNCTION - OPENS NEW PAGE
+        function buyProduct(name, price, image) {
+            // Save product info to localStorage
+            localStorage.setItem('productName', name);
+            localStorage.setItem('productPrice', price);
+            localStorage.setItem('productImage', image);
+            
+            // Open new page
+            window.open('checkout.html', '_blank');
+        }
+        
+        // SHOW ALERT ON LOAD
+        window.onload = function() {
+            alert("🛍️ Welcome to Fashion Store!\n\nClick 'Buy Now' to open checkout page in new tab.");
+        };
+    </script>
+</body>
+</html>
